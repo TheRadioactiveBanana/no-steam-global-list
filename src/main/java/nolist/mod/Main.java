@@ -65,7 +65,7 @@ public class Main extends Mod {
             new ConfigurableObjectSet<>("admins")
         );
 
-        Vars.ui.settings.addCategory("NSGL", Icon.steam, t->{
+        Vars.ui.settings.addCategory("No Steam Global List", Icon.steam, t->{
             t.labelWrap(settingsPageHeader).row();
 
             t.table().growY();
