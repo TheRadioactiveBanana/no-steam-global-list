@@ -1,0 +1,10 @@
+{
+  "name": "no-global-steam-list",
+  "displayName:": "No Global Steam List",
+  "description": "Allows the user to disable or enable the global steam ban or admin list.",
+  "author": "TheRadioactiveBanana",
+  "java": true,
+  "main": "nolist.mod.Main",
+  "hidden": true,
+  "version": 1.0
+}
