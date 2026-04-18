@@ -20,9 +20,5 @@ jar {
 
     from configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
 
-    exclude "META-INF/*.RSA", "META-INF/*.SF","META-INF/*.DSA"
-
-    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-
     archiveFileName = "no-steam-global-list.jar"
 }
