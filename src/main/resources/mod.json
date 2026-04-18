@@ -1,10 +1,11 @@
 {
-  "name": "no-global-steam-list",
+  "name": "no-steam-global-list",
   "displayName:": "NSGL (No Steam Global List)",
   "description": "Lets you enable or disable Mindustry's global Steam ban and admin lists.",
   "author": "TheRadioactiveBanana",
   "java": true,
   "main": "nolist.mod.Main",
   "hidden": true,
-  "version": 1.0
+  "version": 1.0,
+  "minGameVersion": 157.3
 }
