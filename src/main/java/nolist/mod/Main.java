@@ -12,38 +12,38 @@ import mindustry.net.SteamAdmin;
 public class Main extends Mod {
 
     private static final String settingsPageHeader = """
-        Settings for the No Global Steam List mod.
+        Settings for NSGL (No Steam Global List).
         
-        [lightgray]The game fetches a list of [accent]steam IDs[] from these URLs:
+        [lightgray]Mindustry fetches [accent]Steam ID[] lists from these URLs:
         - $LIST.
         
-        This bans some players, and worse, [#F]allows certain users admin privileges[] without your explicit consent.
+        These lists can ban players and, worse, [#F]grant admin privileges[] without your explicit consent.
         
-        [accent]This mod allows you to disable these lists.
+        [accent]NSGL lets you choose whether these lists are enabled.
         """.replace("$LIST", Seq.with(Vars.steamBansURLs).toString("\n- "));
 
     private static final String globalSteamBanHeader = """
-        [lightgray]Enable the global steam ban list. (default=off)
+        [lightgray]Enable the global Steam ban list. (default: off)
         
-        This list will [accent]ban any player[] with these IDs trying to connect to your game.
+        When enabled, this list will [accent]ban players[] whose Steam IDs appear in it.
         """;
 
     private static final String globalSteamAdminHeader = """
-        [lightgray]Enable the global steam admin list. (default=off)
+        [lightgray]Enable the global Steam admin list. (default: off)
         
-        This list will [#f]grant any players with these IDs admin[] on your game.
+        When enabled, this list will [#f]grant admin[] to players whose Steam IDs appear in it.
         """;
 
     private static final String noSteamError = """
-        No Steam Global List - The mod was [#F]not loaded[] as this is [accent]not a steam instance[].
+        NSGL was [#F]not loaded[] because this is [accent]not a Steam instance[].
         
-        The mod will have [accent]no effect[] as the game [#00f]never loads the steam ban list[], due to not being a steam instance.
+        The mod would have [accent]no effect[] here because the game [#00f]does not load the global Steam lists[] on non-Steam instances.
         """;
 
     @Override
     public void init(){
         if(!Vars.steam) {
-            if(!Core.settings.getBool("Hush NSGL No Steam Message", false)) Vars.ui.showErrorMessage(noSteamError);
+            if(!Core.settings.getBool("Hide NSGL No-Steam Warning", false)) Vars.ui.showErrorMessage(noSteamError);
             return;
         }
 
@@ -78,7 +78,7 @@ public class Main extends Mod {
 
             t.table().growY();
 
-            t.checkPref("Hush NSGL No Steam Message", false);
+            t.checkPref("Hide NSGL No-Steam Warning", false);
         });
     }
 }
